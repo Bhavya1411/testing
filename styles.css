@@ -1,0 +1,68 @@
+
+body{
+    background-image: url('birthday_timer_page.jpg');
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-position: center top; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    min-height: 100vh; /* Ensures the body takes up at least the full viewport height */
+    margin: 0;
+    padding: 0;
+}
+
+.romantic-timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer-frame {
+    background: #ffe6e9; /* Light pink background for the timer frame */
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 20px rgba(255, 182, 193, 0.7); /* Soft romantic glow */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    position: relative;
+}
+
+#timer {
+    font-size: 48px;
+    color: #d16ba5; /* Romantic purple-pink color */
+    letter-spacing: 2px;
+}
+
+.birthday-container {
+    text-align: center;
+    position: relative;
+}
+
+.happy-birthday {
+    font-size: 3rem;
+    color: #d16ba5; /* Romantic purple-pink color */
+    animation: float 3s ease-in-out infinite, sparkle 1.5s ease-in-out infinite;
+    position: relative;
+    display: inline-block;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes sparkle {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 182, 193, 0.8), 0 0 20px rgba(255, 182, 193, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 182, 193, 0.8), 0 0 30px rgba(255, 182, 193, 0.6);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 182, 193, 0.8), 0 0 20px rgba(255, 182, 193, 0.6);
+    }
+}

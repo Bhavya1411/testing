@@ -4,43 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Romantic Timer</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
 </head>
 <body>
     <div class="romantic-timer">
         <div class="timer-frame">
             <div class="heart-decor"></div>
-            <div id="timer">00:00:00</div>
+            <div id="elapsed-time">00 Years 00 Months 00 Days 00 Hours 00 Minutes 00 Seconds</div>
             <div class="heart-decor"></div>
         </div>
     </div>
+    <div class="birthday-container">
+        <h1 class="happy-birthday">Happy Birthday!</h1>
+    </div>
 
     <script>
-        // JavaScript to update the timer (optional)
-        function startTimer(duration, display) {
-            let timer = duration, hours, minutes, seconds;
-            setInterval(function () {
-                hours = parseInt((timer / 3600) % 24, 10);
-                minutes = parseInt((timer / 60) % 60, 10);
-                seconds = parseInt(timer % 60, 10);
+        function calculateTimeElapsed(startDate) {
+            const now = new Date();
+            const elapsed = now - startDate;
+            
+            const days = Math.floor(elapsed / (1000 * 60 * 60 * 24));
+            const years = Math.floor(days / 365);
+            const months = Math.floor((days % 365) / 30);
 
-                hours = hours < 10 ? "0" + hours : hours;
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
+            const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
 
-                display.textContent = hours + ":" + minutes + ":" + seconds;
-
-                if (--timer < 0) {
-                    timer = duration;
-                }
-            }, 1000);
+            return {
+                years,
+                months,
+                days,
+                hours,
+                minutes,
+                seconds
+            };
         }
 
-        window.onload = function () {
-            const duration = 60 * 60 * 24; // 24 hours in seconds
-            const display = document.querySelector('#timer');
-            startTimer(duration, display);
-        };
+        function displayElapsedTime() {
+            const startDate = new Date('2005-11-14T00:00:00');
+            const elapsedTime = calculateTimeElapsed(startDate);
+
+            const elapsedTimeDiv = document.getElementById('elapsed-time');
+            elapsedTimeDiv.innerHTML = `
+                ${elapsedTime.years} Years 
+                ${elapsedTime.months} Months  
+                ${elapsedTime.hours} Hours 
+                ${elapsedTime.minutes} Minutes 
+                ${elapsedTime.seconds} Seconds
+            `;
+        }
+
+        // Update the elapsed time every second
+        setInterval(displayElapsedTime, 1000);
     </script>
 </body>
 </html>
