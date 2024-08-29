@@ -7,6 +7,7 @@ body{
     min-height: 100vh; /* Ensures the body takes up at least the full viewport height */
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 .romantic-timer {
@@ -16,10 +17,9 @@ body{
 }
 
 .timer-frame {
-    background: #ffe6e9; /* Light pink background for the timer frame */
+    background: #f3a5e6; /* Light pink background for the timer frame */
     padding: 20px;
     border-radius: 30px;
-    box-shadow: 0 0 20px rgba(255, 182, 193, 0.7); /* Soft romantic glow */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -57,12 +57,96 @@ body{
 
 @keyframes sparkle {
     0% {
-        text-shadow: 0 0 10px rgba(255, 182, 193, 0.8), 0 0 20px rgba(255, 182, 193, 0.6);
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 182, 193, 0.6);
     }
     50% {
-        text-shadow: 0 0 20px rgba(255, 182, 193, 0.8), 0 0 30px rgba(255, 182, 193, 0.6);
+        text-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 182, 193, 0.6);
     }
     100% {
-        text-shadow: 0 0 10px rgba(255, 182, 193, 0.8), 0 0 20px rgba(255, 182, 193, 0.6);
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 182, 193, 0.6);
     }
 }
+.container {
+    text-align: center;
+}
+
+.romantic-button {
+    background: linear-gradient(135deg, #f9a1bc, #ff7e92); /* Gradient pink */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.romantic-button::before {
+    content: '💍'; /* Engagement ring emoji */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    opacity: 0;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.romantic-button:hover {
+    background: linear-gradient(135deg, #ff7e92, #f9a1bc);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.romantic-button:hover::before {
+    opacity: 1;
+    text-align: center;
+}
+.button-container {
+    display: flex;
+    gap: 20px; /* Space between buttons */
+    text-align: center;
+}
+.button-container {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    align-items: center; /* Center buttons vertically if needed */
+    gap: 20px; /* Space between buttons */
+}
+
+.romantic-button::before {
+    content: ''; /* Empty content */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.yes-button::before {
+    content: '💖'; /* Heart emoji for Yes */
+}
+
+.no-button::before {
+    content: '💔'; /* Broken heart emoji for No */
+}
+
+.romantic-button:hover {
+    background: linear-gradient(135deg, #f9a1bc, #ff7e92);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.romantic-button:hover::before {
+    opacity: 1;
+}
+
+
