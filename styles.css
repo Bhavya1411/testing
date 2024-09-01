@@ -7,24 +7,15 @@ body{
     min-height: 100vh; /* Ensures the body takes up at least the full viewport height */
     margin: 0;
     padding: 0;
-    text-align: center;
-}
 
-.romantic-timer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .timer-frame {
     background: #f3a5e6; /* Light pink background for the timer frame */
     padding: 20px;
     border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 300px;
-    position: relative;
+    text-align: center;
+    width: auto;
 }
 
 #timer {
@@ -109,16 +100,14 @@ body{
     opacity: 1;
     text-align: center;
 }
-.button-container {
+.button {
     display: flex;
     gap: 20px; /* Space between buttons */
     text-align: center;
-}
-.button-container {
     display: flex;
     justify-content: center; /* Center buttons horizontally */
     align-items: center; /* Center buttons vertically if needed */
-    gap: 20px; /* Space between buttons */
+    gap: 20px;
 }
 
 .romantic-button::before {
@@ -132,14 +121,6 @@ body{
     transition: all 0.3s ease;
 }
 
-.yes-button::before {
-    content: '💖'; /* Heart emoji for Yes */
-}
-
-.no-button::before {
-    content: '💔'; /* Broken heart emoji for No */
-}
-
 .romantic-button:hover {
     background: linear-gradient(135deg, #f9a1bc, #ff7e92);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
@@ -148,5 +129,17 @@ body{
 .romantic-button:hover::before {
     opacity: 1;
 }
-
-
+.elapsed-time{
+    text-align: center;
+}
+.button{
+    display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #f35a80;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+}
